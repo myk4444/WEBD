@@ -1,0 +1,284 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v7.0.29,
+* Autoprefixer: v9.7.6
+* Browsers: last 4 version
+*/
+/* CSS Variables */
+:root {
+	--primary: #ddd;
+	--dark: #333;
+	--light: #fff;
+	--shadow: 0 1px 5px rgba(104, 104, 104, 0.8); /* shadow around each boxes */
+}
+
+html {
+	-webkit-box-sizing: border-box;
+	        box-sizing: border-box; /* If we use padding or anything it doesn't affect the width of element */
+	font-family: Arial, Helvetica, sans-serif;
+	color: var(--dark); /* var (variable) pass in variable --dark */
+}
+
+body {
+	background: #ccc;
+	margin: 30px 50px; /* 30px top & bottom, 50px left & right */
+	line-height: 1.4;
+}
+
+.btn {
+	background: var(--dark);
+	color: var(--light);
+	padding: 0.6rem 1.3rem; /* Using rem for responsive web. 0.6rem top & bottom, 1.3rem left & right (1rem = 16px) */
+	text-decoration: none; /* no underlines */
+	border: 0;
+}
+
+img {
+	max-width: 100%; /* Images to stay within their container within their parents */
+}
+
+.wrapper {
+	display: -ms-grid;
+	display: grid;
+	grid-gap: 20px; /*  Spacing in between everything that way we don't have to manually assign all of our margins etc. */
+}
+
+/* Navigation */
+.main-nav ul {
+	display: -ms-grid;
+	display: grid;
+	grid-gap: 20px;
+	padding: 0;
+	list-style: none;
+	-ms-grid-columns: 1fr 20px 1fr 20px 1fr 20px 1fr;
+	grid-template-columns: repeat(4, 1fr);
+	/* 1 fractional (spread the links on top apart) repeat(4, 1fr) = 1fr 1fr 1fr 1fr */
+}
+
+.main-nav a {
+	background: var(--primary);
+	display: block;
+	text-decoration: none; /* no underlines */
+	padding: 0.8rem;
+	text-align: center;
+	color: var(--dark);
+	text-transform: uppercase;
+	font-size: 1.1rem;
+	-webkit-box-shadow: var(--shadow);
+	        box-shadow: var(--shadow);
+}
+
+.main-nav a:hover {
+	background: var(--dark); /* This will make links dark background when hover */
+	color: var(--light);
+}
+
+/* Top Container */
+.top-container {
+	display: -ms-grid;
+	display: grid;
+	grid-gap: 20px;
+	    grid-template-areas:
+		'showcase showcase top-box-a'
+		'showcase showcase top-box-b';
+}
+
+/* Showcase */
+.showcase {
+	-ms-grid-row: 1;
+	-ms-grid-row-span: 3;
+	-ms-grid-column: 1;
+	-ms-grid-column-span: 3;
+	grid-area: showcase; /* asigned grid area and assign it to showcase */
+	min-height: 400px;
+	background: url(img/showcase.jpg);
+	background-size: cover; /* It will fill not zoom-in */
+	background-position: center;
+	padding: 3rem;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	    -ms-flex-direction: column;
+	        flex-direction: column;
+	-webkit-box-align: start;
+	    -ms-flex-align: start;
+	        align-items: start;
+	-webkit-box-pack: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
+	-webkit-box-shadow: var(--shadow);
+	        box-shadow: var(--shadow);
+}
+
+.showcase h1 {
+	font-size: 4rem;
+	margin-bottom: 0; /* Paragraph and the heading can come closer together */
+	color: var(--light);
+}
+
+.showcase p {
+	font-size: 1.3rem;
+	margin-top: 0;
+	color: var(--light);
+}
+
+/* Top Box */
+.top-box {
+	background: var(--primary);
+	display: -ms-grid;
+	display: grid;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	justify-items: center;
+	-webkit-box-shadow: var(--shadow);
+	        box-shadow: var(--shadow);
+	padding: 1.5rem;
+}
+
+.top-box .price {
+	font-size: 2.5rem;
+}
+
+.top-box-a {
+	-ms-grid-row: 1;
+	-ms-grid-column: 5;
+	grid-area: top-box-a;
+}
+
+.top-box-b {
+	-ms-grid-row: 3;
+	-ms-grid-column: 5;
+	grid-area: top-box-b;
+}
+
+/* Boxes */
+.boxes {
+	display: -ms-grid;
+	display: grid;
+	grid-gap: 20px;
+	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+	/* This is way I don't have to changing when certain size */
+}
+
+.box {
+	background: var(--primary);
+	text-align: center;
+	padding: 1.5rem 2rem;
+	-webkit-box-shadow: var(--shadow);
+	        box-shadow: var(--shadow);
+	/* These setting will create box around each boxes */
+}
+
+/* Info */
+.info {
+	background: var(--primary);
+	-webkit-box-shadow: var(--shadow);
+	        box-shadow: var(--shadow);
+	display: -ms-grid;
+	display: grid;
+	grid-gap: 30px;
+	-ms-grid-columns: 1fr 30px 1fr;
+	grid-template-columns: repeat(2, 1fr); /* 2 x 1 fraction */
+	padding: 3rem;
+}
+
+/* Portfolio */
+.portfolio .box {
+	background: var(--primary);
+	text-align: center;
+	padding: 1.5rem 2rem;
+	-webkit-box-shadow: var(--shadow);
+	        box-shadow: var(--shadow);
+	/* These setting will create box around each boxes */
+}
+
+.portfolio {
+	display: -ms-grid;
+	display: grid;
+	grid-gap: 20px;
+	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.portfolio img {
+	width: 100%;
+	-webkit-box-shadow: var(--shadow);
+	        box-shadow: var(--shadow);
+}
+
+/* Footer */
+footer {
+	margin-top: 2rem;
+	background: var(--dark);
+	color: var(--light);
+	text-align: center;
+	padding: 1rem;
+}
+
+/* Media Queries */
+@media (max-width: 700px) {
+	.top-container {
+		    grid-template-areas:
+			'showcase showcase'
+			'top-box-a top-box-b';
+	}
+
+	.showcase h1 {
+		font-size: 2.5rem;
+	}
+
+	.main-nav ul {
+		-ms-grid-columns: 1fr;
+		grid-template-columns: 1fr;
+	}
+
+	.info {
+		-ms-grid-columns: 1fr;
+		grid-template-columns: 1fr;
+	}
+
+	.info .btn {
+		display: block; /* This will make the "Learn More" longer */
+		text-align: center; /* "Learn More" to center */
+		margin: auto;
+	}
+	.showcase {
+		-ms-grid-row: 1;
+		-ms-grid-row-span: 1;
+		-ms-grid-column: 1;
+		-ms-grid-column-span: 3;
+	}
+	.top-box-a {
+		-ms-grid-row: 3;
+		-ms-grid-column: 1;
+	}
+	.top-box-b {
+		-ms-grid-row: 3;
+		-ms-grid-column: 3;
+	}
+}
+
+@media (max-width: 500px) {
+	.top-container {
+		    grid-template-areas:
+			'showcase'
+			'top-box-a'
+			'top-box-b';
+	}
+	.showcase {
+		-ms-grid-row: 1;
+		-ms-grid-row-span: 1;
+		-ms-grid-column: 1;
+		-ms-grid-column-span: 1;
+	}
+	.top-box-a {
+		-ms-grid-row: 3;
+		-ms-grid-column: 1;
+	}
+	.top-box-b {
+		-ms-grid-row: 5;
+		-ms-grid-column: 1;
+	}
+}
