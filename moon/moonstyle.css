@@ -1,0 +1,114 @@
+@charset "UTF-8";
+body { /* Georgia is a nearly universally available serif typeface */
+	font-family: 'Georgia Pro', Georgia, Times, 'Times New Roman', serif;
+	line-height: 1.5; 
+	margin: 0;
+    padding: 3em 1em;
+} 
+
+h1, h2, h3, h4, h5, h6 {/* Serifs are the small angled shapes at the end of the strokes of a glyph */
+	font-family: Avenir Next, SegoeUI, arial, sans-serif;
+	margin-top: 24px; /* fallback for older browsers IE<9 */
+	margin-top: 1.5rem; /* 24px, will be ignored by old browsers. rem unit is relatively new, works in all modern browsers */
+	font-weight: 500;
+}
+/* "perfect fourth" each increased heading leave is 1/4 of its own size larger than previous level */
+h1 {
+	font-size: 2.315em; /* 37px */
+    font-weight: 800;
+    border-bottom: 1px solid #c8bc9d;
+    text-align: center;
+    margin-bottom: .5em;
+    text-transform: uppercase;
+	/* text-transform: lowercase; to all letters lowercase */
+}
+
+h2 {
+	font-size: 1.75em; /* 28px */
+	font-weight: 600;
+	line-height: 1.25; /* 28 * 1.25 = 35px */
+	margin-top:1.036em; /* 29px */
+    margin-bottom: .2859em; /* 8px */
+}
+
+h3 {
+	font-size: 1.314em; /* 1.314 * 16 = 21px */ 
+	/*font-size: 1.333em; /* 20px */
+	line-height: 1.29; /* 1.29*21 =27px */
+	margin-top: .619em; /* 13px */
+    margin-bottom: .38em; /* 8px */
+}
+
+p { 
+	color: #3b4348; 
+	margin: 0;
+	/*font-size: 1.314em;*/
+	hyphens: auto;
+	-moz-hyphens: auto;
+	-ms-hyphens: auto;
+	-webkit-hyphens: auto;
+} 
+
+a { 
+	color: #235ea7; 
+}
+
+/*
+i {
+	font-style: italic;
+	 font-weight: 700; 
+	 font-style: normal; 
+}
+*/
+
+p + p {
+        text-indent: 1.25em;
+    }
+
+.ordinal {
+	vertical-align: super;
+	font-size: smaller;
+}
+
+abbr {
+	text-transform: lowercase;
+	font-variant: small-caps;
+	line-height: 1.25;
+	letter-spacing: 0.1em; /* word-spacing property is seldom used, but as you can probably guess it affects the spacing between words */
+
+}
+
+article {
+	/*font-size: 1.314em;*/
+	/*max-width: 36em;*/
+	margin: 0 auto;
+	max-width: 70em;
+	-moz-columns: 20em;
+	-webkit-columns: 20em;
+	columns: 20em; /* automatic number of columns as long as they are at least 20em */
+	-moz-column-gap: 1.5em;
+	-webkit-column-gap: 1.5em;
+	column-gap: 1.5em;
+	/* coumns:3; creates 3 columns, with automatic width */
+}
+
+article > p {
+    max-width: 36em;
+  }
+
+/* 
+i {
+font-style: italic;
+font-weight: 700;
+font-style: normal;
+}
+*/
+
+ h1, .source {
+      -webkit-column-span: all;
+	 	-moz-column-span:all;
+              column-span: all; /*  or column-span: none; to explicitly turn off */
+	 /* column-span:all; will divide the column flow into several vertically stacked sets of columns */
+	 
+	 /* Firefox does not support the column-span */
+}
