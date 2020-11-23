@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Flexbox multiple rows</title>
+	<style>
+		.wrapper {
+			font-family: sans-serif;
+			max-width: 1200px;
+			margin: 40px auto 0;
+			border: solid 1px #666;
+			display: flex;
+			justify-content: space-between;
+			flex-wrap: wrap; /*default*/
+		}
+		h3 {
+			margin: 0;
+		}
+		.col {
+			width: 150px;
+			height: 150px;
+			background-color: #069;
+			color: #fff;
+			line-height: 100px;
+			text-align: center;
+			font-weight: bold;
+			font-size: 60px;
+			box-sizing: border-box;
+			border: solid 1px orange;
+		}
+		@media screen and (min-width: 700px) {
+		
+		}
+	</style>
+</head>
+
+<body>
+<div class="wrapper">
+	<article class="col">
+		<h3>1</h3>
+	</article>
+	
+	<article class="col">
+		<h3>2</h3>
+	</article>
+	
+	<article class="col">
+		<h3>3</h3>
+	</article>
+	
+	<article class="col">
+		<h3>4</h3>
+	</article>
+	
+	<article class="col">
+		<h3>5</h3>
+	</article>
+	
+	<article class="col">
+		<h3>6</h3>
+	</article>
+</div>
+</body>
+</html>

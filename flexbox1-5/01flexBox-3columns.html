@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Flexbox equal heights</title>
+	
+	<style>
+	.wrapper {
+		font-family: sans-serif;
+		width: 80%;
+		max-width: 1200px;
+		margin: 40px auto 0;
+		padding: 20px 50px;
+		line-height: 1.5;
+		display: flex;/* This will make flexbox - flexible box */
+	}
+	.mainCol {
+		flex: 3; /* want to bigger change value. current, value 1 to 2. 3... This will make bigger than other coloums */
+		order: 2;
+	}
+	.sidebar1 {
+		flex: 1;
+		order: 1;
+	}
+	.sidebar2 {
+		flex: 1; 
+		order: 3;
+	} 
+	</style>
+</head>
+
+<body>
+<div class="wrapper">
+<article class="mainCol">
+	<h2>Main Column</h2>
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati iste, nihil in sit, soluta temporibus asperiores blanditiis quod voluptates unde dolorum sint numquam, nulla distinctio, nam vero. Eaque nihil, nulla quia quisquam, ipsam commodi placeat temporibus rerum cumque ea, necessitatibus quo porro tempore doloribus molestiae, maiores sint? Eum, deleniti, culpa.</p>
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde ab dolorum aspernatur voluptates, architecto doloribus ut assumenda, natus porro. Non quam, culpa voluptatum in. Natus deserunt eos nisi totam ratione!</p>
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt aspernatur accusantium, nam expedita magni iste?</p>
+</article>
+
+<aside class="sidebar1">
+	<h2>Sidebar One</h2>
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit sunt vero debitis, non perspiciatis natus ad voluptate autem eos saepe soluta, eaque ex corrupti sed dolor cumque est in inventore.</p>
+</aside>
+	
+<aside class="sidebar2">
+	<h2>Sidebar Two</h2>
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime sint laboriosam commodi laborum, earum consequuntur, quasi dolore exercitationem perferendis at omnis ipsum recusandae optio eaque.</p>
+</aside>
+</div>
+</body>
+</html>

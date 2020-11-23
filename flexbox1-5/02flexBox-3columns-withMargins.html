@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Flexbox 3 columns with margins</title>
+	
+	<style>
+	.wrapper {
+		font-family: sans-serif;
+		width: 80%;
+		margin: 0 auto;
+		max-width: 1200px;
+		margin: 40px auto 0;
+		line-height: 1.5;
+		border: solid 1px #666;
+		align-items: flex-stretch; /* felx-stretch is default  */
+	}
+	.col {
+		padding: 20px;
+		/* flex: 1; */
+		/* margin-right: 15px; */
+		flex-basis: 30%;
+		box-sizing: border-box;
+	}
+	.col1 {
+		background-color: #7cba3d;
+	}
+	.col2 {
+		background-color: #43a140;
+	}
+	.col3 {
+		background-color: #008238;
+	}
+
+	@media screen and (min-width: 700px) {
+		.wrapper {
+			display: flex;
+			justify-content: space-between;
+		}
+	}
+	</style>
+</head>
+
+<body>
+<div class="wrapper">
+<article class="col col1">
+	<h2>Column 1</h2>
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium earum asperiores distinctio iste voluptatibus, in nostrum sed amet non, ipsam ducimus dolor perferendis labore exercitationem quam autem. Libero possimus obcaecati minus eligendi explicabo veniam velit vel dolorem ratione illum, cum eaque quae incidunt fugiat tenetur optio quibusdam quis fugit reprehenderit.</p>
+</article>
+
+<aside class="col col2">
+	<h2>Column 2</h2>
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus iusto possimus aut, quae, nihil perferendis illo adipisci optio aliquam beatae molestiae. Quae, in quam dolor omnis enim nisi praesentium ducimus.</p>
+</aside>
+
+<aside class="col col3">
+	<h2>Column 3</h2>
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam ab reiciendis, quos tempora suscipit saepe necessitatibus eveniet, dicta autem mollitia.</p>
+</aside>
+</div>
+</body>
+</html>
