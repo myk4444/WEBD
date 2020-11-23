@@ -1,0 +1,174 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>CSS selectors</title>
+<!--[if lt IE 9]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<style>
+aside, article, section, header, footer, nav {
+	display: block;
+}
+* {
+	margin: 0;
+	padding: 0;
+}
+html {
+	background: gray;
+}
+body {
+	font-family: Arial;
+	font-size: 100%;
+	width: 700px;
+	background: white;
+	margin: 0 auto;
+}
+article {
+	padding: 0 25px;
+}
+h1 {
+	font-family: Georgia;
+	font-size: 1.8em;
+	font-weight: normal;
+	margin-top: 1em;
+}
+h2 {
+	font-family: Georgia;
+	font-size: 1.4em;
+	font-weight: normal;
+	margin-bottom: 0;
+	color: #42403E;
+	border-bottom: 1px solid #42403E;
+}
+p {
+	font-size: 1em;
+	margin-bottom: 1em;
+	line-height: 1.6;
+}
+footer {
+	background: #42403E;
+	padding: 10px 0;
+	color: white;
+	text-align: center;
+}
+header h1 {
+	background: #42403E;
+	text-align: center;
+	line-height: 75px;
+	color: white;
+}
+/* new styles */
+ul {
+	overflow: hidden;
+	margin: 0 0 1.6em 0;
+	padding: 0;
+	list-style: none;
+}
+li {
+	margin: 0;
+	padding: 0 0 .25em 1em;
+}
+a {
+	color: #146DA3;
+}
+ul a, .sampleGraphs a {
+	display: inline-block;
+	min-height: 20px;
+	padding-left: 20px;
+	background-repeat: no-repeat;
+	background-position: 0 2px;
+	}
+/* attribute selectors */
+ul a[href$=".gif"], ul a[href$=".jpg"], a[href$=".png"] {
+	background-image: url("images/icon_photo.png");	
+	}
+a[href$=".doc"] {
+	background-image: url("images/icon_doc.png");
+	}
+a[href$=".pdf"] {
+	background-image: url("images/icon_pdf.png");
+	}
+a[href$=".mp4"] {
+	background-image: url("images/icon_film.png");
+	}
+a[href^="http://"], a[href^="https://"] {
+		background-image: url("images/icon_www.png");
+	}
+a[href*="podcast"] {
+		background-image: url("images/icon_podCast.png");
+	}
+/** to add file extenstion text**/
+a[href$=".gif"]:after, a[href$=".jpg"]:after, a[href$=".png"]:after {
+		content: " (GRAPHIC)";
+	}
+a[href$=".pdf"]:after {
+	content: " (PDF)";		
+	}
+a[href$=".doc"]:after{
+	content: " (WORD DOC)";	
+	}
+a[href$=".mp4"]:after {
+		content: " (VIDEO)";
+	}
+a[href^="http://"]:after{
+	content: " (WEB LINK)";		
+	}
+	.sampleGraphs a {
+		background-position: 0 6px;
+	}
+.sampleGraphs a[href*="pie"] {/* *asterick means you have to whatever the value is somewhere in the href attribute */
+	background-image: url("images/icon_pie.png");
+	}
+.sampleGraphs a[href*="bar"] {/* *asterick means you have to whatever the value is somewhere in the href attribute */
+	background-image: url("images/icon_chart.png");
+	}
+.sampleGraphs a[href*="line"] {/* *asterick means you have to whatever the value is somewhere in the href attribute */
+	background-image: url("images/icon_line.png");
+	}
+.sampleGraphs a[href*="area"] {/* *asterick means you have to whatever the value is somewhere in the href attribute */
+	background-image: url("images/icon_area.png");
+	}
+.sampleGraphs a[rel~="xy"]{ /* ~ tilde is looking for an atturibute that is within a space separated list */
+	background-image: url("images/icon_xy.png");
+	}
+</style>
+</head>
+<body>
+
+<header>
+<h1>This is the site's main heading</h1>
+</header>
+
+<article>
+<h1>This is the article's main headline</h1>
+<p>This is a paragraph inside the main content. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec accumsan nibh risus, maximus interdum dui lacinia sit amet.</p>
+<p> Sed finibus risus vel erat aliquet, nec blapngndit sapien tristique. Nunc et viverra velit. Vivamus porttitor nec ante id tincidunt. Aenean sit amet leo fermentum, sollicitudin sem ac, pharetra lorem. Sed eleifend ultrices rhoncus. Etiam eros metus, dignissim vel mattis non, gravida scelerisque tortor. Curabitur sollicitudin risus ac nibh auctor aliquet.</p>
+<h2>This is a subhead</h2>
+<p>Cras ante sapien, accumsan vel dictum vel, vehicula et augue. Sed quis suscipit dolor. Nullam vitae sodales massa, a placerat nisl. Praesent a pulvinar est. Sed turpis magna, consequat vestibulum sem eu, vulputate pulvinar libero.</p>
+<p>Some good graphing examples and resources:</p>
+<ul>
+  <li><a href="images/pie.gif" target="_blank">pie graph example</a> (Pie Graph)</li>
+  <li><a href="images/graph.gif" target="_blank">bar graph example</a> (Bar Graph)</li>
+  <li><a href="media/example1.pdf" target="_blank">read more about it</a> (How to create a graph)</li>
+  <li><a href="media/example1.doc" target="_blank">A thorough discussion on graphing</a> (everything about graphs and more)</li>
+  <li><a href="media/MathMadeEasy.mp4" target="_blank">you betcha!</a> (a video on graphing)</li>
+  <li><a href="http://nces.ed.gov/nceskids/graphing/classic/pie.asp" target="_blank">pie graphing</a> (pie graph creation made easy)</li>
+  <li><a href="http://nces.ed.gov/nceskids/createagraph/default.aspx?ID=8e5c3fb342df452b8ae1b0a500d9b10d" target="_blank">bar graphing</a> (Bar graphing made easy)</li>
+  <li><a href="http://www.podcast.com">weekly graphing pod cast</a> (Keep your graphing skills current)</li>
+  </ul>
+<p>Some additional information and examples on graphing</p>
+
+<p class="sampleGraphs"><a href="images/pie_graph.gif">Sample Pie graph</a><br>
+  <a href="images/bar_graph.gif">Sample Bar graph</a><br>
+  <a href="images/line_graph.gif">Sample Line Graph</a><br>
+  <a href="images/area_graph.gif">Sample Area Graph</a> <br>
+  <a href="#" rel="xy graph">Sample XY Graph</a></p> 
+</article>
+
+<footer>
+<p>copyright and legal disclaimer</p>
+</footer>
+
+</body>
+</html>

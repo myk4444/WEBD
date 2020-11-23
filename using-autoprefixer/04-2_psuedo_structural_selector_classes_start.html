@@ -1,0 +1,165 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>CSS structural selectors</title>
+<!--[if lt IE 9]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<style>
+aside, article, section, header, footer, nav {
+	display: block;
+}
+* {
+	margin: 0;
+	padding: 0;
+}
+body { 
+    margin: 1em auto;
+    width: 700px; 
+	font-family: "Helvetica Neue","Helvetica", sans-serif;
+    background-color:rgba(255, 255, 255, .5);
+    border-radius: 8px;
+}
+:root { 
+    background: url(images/bg1.gif);
+}
+article {
+		padding: 0 1.5em 1.5em;;
+}
+blockquote, ul, ol {
+	margin:0 1.5em;
+}
+p {
+	font-size: 1em;
+	margin-bottom: 1em;
+	line-height: 1.6;
+}
+h1 {
+	font-family: Georgia;
+	font-size: 1.8em;
+	font-weight: normal;
+	margin-top: 1em;
+}
+h2 {
+	font-family: Georgia;
+	font-size: 1.4em;
+	font-weight: normal;
+	margin-bottom: 0;
+	color: #42403E;
+}
+header h1 {
+	background: #42403E;
+	text-align: center;
+	line-height: 75px;
+	color: white;
+}
+h2:first-of-type {
+	    border-bottom: 1px solid #42403E;  		
+	}
+blockquote:nth-of-type(2){
+	-webkit-column-count: 2;
+	-moz-column-count: 2;
+	column-count: 2;	
+	}
+section:last-child {	/* last-child, select last section of the text */
+		text-align: center;
+		font-style: italic;
+	}	
+footer {
+	background: #42403E;
+	padding: 10px 0;
+	color: white;
+	text-align: center;
+	border-radius: 0 0 8px 8px;
+}
+footer p:only-child {	/* If there is another p tag, this rule will be ignore */
+		margin-bottom: 0;
+	}
+</style>
+</head>
+<body>
+
+<header>
+<h1>Structural Pseudo-Classes</h1>
+</header>
+
+<article>
+<section>
+    <h1>What’s a pseudo-class?</h1>
+    <p>CSS pseudo-classes target elements that can’t be targeted with combinators or simple selectors like id or class. You use pseudo-classes to select elements based on their attributes, states, and relative position. For example, you are probably already familiar with pseudo-classes for link states:</p>
+    <blockquote>
+      <p>:link <br>
+        :visited <br>
+        :hover <br>
+        :active <br>
+        :focus</p>
+    </blockquote>
+    <p>CSS3 introduces a number of new pseudo-classes, including structural pseudo-classes that target elements according to their position in the document tree and relation to other elements. Here’s a list of the structural pseudo-classes </p>
+    <blockquote>
+      <p>:root <br>
+        :only-child <br>
+        :empty <br>
+        :nth-child(n) <br>
+        :nth-last-child(n) <br>
+        :first-of-type <br>
+        :last-of-type <br>
+        :only-of-type <br>
+        :nth-of-type(n) <br>
+        :nth-last-of-type(n) <br>
+        :first-child <br>
+      :last-child</p>
+    </blockquote>
+</section>
+  <section>
+    <h2>Pseudo-Class Syntax</h2>
+    <p>The syntax for pseudo-classes uses a colon (:) followed by the pseudo-class name:</p>
+    <blockquote>
+      <p>:pseudo-class {}</p>
+    </blockquote>
+    <p>If you want to target a specific element (e), you append that element to the beginning of the pseudo-class syntax:</p>
+    <blockquote>
+      <p>e:pseudo-class {}</p>
+    </blockquote>
+    <p>You can even use pseudo-classes alongside id and class selectors, as you see here:</p>
+    <blockquote>
+      <p>#id:pseudo-class {} .class:pseudo-class {}</p>
+    </blockquote>
+    <h2>Numeric Values</h2>
+    <p>Some of the CSS3 pseudo-classes target elements on the basis of the elements’ specific location in the document tree. You indicate the position with a numeric value in parentheses (n) appended to the pseudo-class name:</p>
+    <blockquote>
+      <p>:pseudo-class(n) {}</p>
+    </blockquote>
+    <p>The value of (n) can be an integer to indicate an element’s position in the document tree. The following example targets the third element that meets the pseudo-class rule:</p>
+    <blockquote>
+      <p>:pseudo-class(3) {}</p>
+    </blockquote>
+    <p>You can also specify numeric formulas, such as “every fifth element,” which is indicated as a value of (5n):</p>
+    <blockquote>
+      <p>:pseudo-class(5n) {}</p>
+    </blockquote>
+    <p>Additionally, you can specify an offset formula (negative values allowed; default is zero) by adding (+) or subtracting (-) the offset value:</p>
+    <blockquote>
+      <p>:pseudo-class(5n+1) {}</p>
+    </blockquote>
+    <p>These new selectors also allow you to target elements by their document tree order with the keywords odd and even. For example, if you want to target the odd-numbered elements, use the following:</p>
+    <blockquote>
+      <p>:pseudo-class(odd) {}</p>
+    </blockquote>
+  </section>
+  <section>
+    <h2>Browser Support</h2>
+    <p>The good news is that all the latest browser versions, including Internet Explorer 10 and 9, support these <a href="http://caniuse.com/#feat=css-sel3" target="_blank">CSS3 pseudo-classes</a>. Some older browser versions may provide limited support for a few of the CSS3 selectors in this article.</p>
+    <p>When it comes to support in earlier version of Internet Explorer, it really should be about your project. How are you using any unsupported selectors? If it is purely for design and aesthetic purposes, ask yourself whether you can allow those Internet Explorer users to have a slightly degraded experience, while allowing Internet Explorer 9 and other browser users to have an enhanced experience. If the answer is yes, consider focusing on an adaptive approach to your CSS.</p>
+  </section>
+  <section>
+    <p>Pseudo class selectors can be invaluable tools, particularly for cases when you can’t rely on id and class selectors. Remember, writing good CSS is about finding the most efficient way to achieve a project’s goals. Here's a complete list of the CSS3 pseudo selectors: <a href="https://www.w3schools.com/css/css_pseudo_elements.asp" target="_blank">https://www.w3schools.com/css/css_pseudo_elements.asp</a></p>
+</section>
+</article>
+
+<footer>
+<p>copyright and legal disclaimer</p>
+</footer>
+
+</body>
+</html>
