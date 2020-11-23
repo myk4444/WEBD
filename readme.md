@@ -1,3 +1,3 @@
 # My Wev Design course
 
-This is my files from Web Design Course
+This is files are for my Web Design Course
